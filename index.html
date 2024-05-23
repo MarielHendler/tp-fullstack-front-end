@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head> <!-- no se muestra en la página-->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>        
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="module" src="/src/main.jsx"></script>
+    <script src='./index.js'></script>
+    <title>ToyLand | Tu peluche personalizado </title>
+
+</head>
+    <body>
+        <nav>
+            <h1 class="titulopagina">ToyLand</h1>
+            <div class="navdiv">
+                <button id="registrarse" onclick="location.href='./register.html'">Registrarse</button>
+                
+                <button id="login">Iniciar sesión</button>
+                
+            </div>
+        </nav>
+            <div class="container">
+                <div class = "ranking">
+                    <h2>Estos son los 3 peluches más elegidos por los usuarios :</h2>
+                    <ul class="rankinglistapeluche">
+                        <li>
+                            <div>
+                                <h3>Peluche 1</h3>
+                                <p>Peluche info 1</p>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Peluche 2</h3>
+                                <p>Peluche info 2</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Peluche 3</h3>
+                                <p>Peluche info 3</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="ranking">
+                        <h2>Ranking</h2>
+                        <ul id="ranking-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <!--<img id="photo-peluche-perro" width=200 height=200 title="Foto peluche perro" alt="foto peluche perro"
+                src="images\Perromate.JPG">-->
+    </body>
+
+
+
+
+</html>
