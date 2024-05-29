@@ -1,29 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('registration-form').addEventListener('submit', async function (event) {
+    document.getElementById('login-form').addEventListener('btnLogin', async function (event) {
         event.preventDefault();
 
-        const nombre = document.getElementById('nombre').value;
-        const apellido = document.getElementById('apellido').value;
-        const email = document.getElementById('email').value;
+
+        console.log("llegue hasta aca");
+
+
+        const email = document.getElementById('email').value;  
         const password = document.getElementById('password').value;
 
-        const datos = {
-            nombre: nombre,
-            apellido: apellido,
+        const data = {
             email: email,
             password: password
         };
 
-        console.log(datos);
+        console.log(data);
         const mensajeDiv = document.getElementById('mensaje');
 
         try {
-            const response = await fetch('http://localhost:8080/users/', {
+            const response = await fetch('http://localhost:8080/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(datos)
+                body: JSON.stringify(data)
             });
             console.log(response);
             if (response.ok) {
