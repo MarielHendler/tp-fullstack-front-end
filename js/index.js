@@ -1,8 +1,5 @@
 const API_URL = "http://localhost:8080/ranking";
 
-console.log("hola mundo")
-
-
 document.addEventListener("DOMContentLoaded",function(){
 
     fetch(API_URL)
@@ -12,11 +9,9 @@ document.addEventListener("DOMContentLoaded",function(){
     .catch(err => console.log('Solicitud fallida', err)); // Capturar errores
 
 
-    contador = 0;
 
     let btn = document.getElementById("registrarse")
     btn.addEventListener("click",function(){
-        alert("Se redirige a Register.html!")
     })
    
 
@@ -41,8 +36,12 @@ document.addEventListener("DOMContentLoaded",function(){
             nodo = document.createTextNode(texto)
             h3.appendChild(nodo)
 
-
+           /* let img = document.createElement("img");
+            img.src = getImage(element.pelucheUsuarioRanking.color);
+            img.alt = element.pelucheUsuarioRanking.tipo + " " + element.pelucheUsuarioRanking.color;
+*/
             li.appendChild(div);
+          //  li.appendChild(img);
             li.appendChild(h3);
 
             rankingList.appendChild(li);
@@ -50,6 +49,36 @@ document.addEventListener("DOMContentLoaded",function(){
 
     }
 
-   
+  /*  function getImage(tipo, color) {
+        const basePath = "images/";
+        let fileName = "";
 
-}) 
+        switch(tipo.toLowerCase()) {
+            case "gato":
+                fileName = "gato";
+                break;
+            case "mapache":
+                fileName = "mapache";
+                break;
+             case "perro":
+                fileName = "perro";
+                break;  
+        }
+
+        switch(color.toLowerCase()) {
+            case "rosa":
+                fileName += "rosa.jpg";
+                break;
+            case "verde":
+                fileName += "verde.jpg";
+                break;
+            case "amarillo":
+                fileName += "amarillo.jpg";
+                break;
+            // Añadir más casos según los colores disponibles
+  
+        }
+        
+        return basePath + fileName;
+    }*/
+});

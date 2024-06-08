@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('registration-form').addEventListener('submit', async function (event) {
         event.preventDefault();
 
+
+        console.log("esto llama bien al codigo")
+
         const nombre = document.getElementById('nombre').value;
         const apellido = document.getElementById('apellido').value;
         const email = document.getElementById('email').value;

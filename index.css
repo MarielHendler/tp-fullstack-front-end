@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+
 *
 {
     margin: 0;
@@ -8,24 +11,40 @@
 }
 
 .titulopagina{
-    color:rgb(244, 250, 255);
+    color:rgb(252, 252, 252);
     font-size: 40px;
+    display:flex;
+    flex-direction: row; 
+    align-items:end;
+    padding:10px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+      
 }
+
 
 nav{
    background-color :rgb(87, 152, 212);
-   height: 70px; 
+   /*background-image: url('./images/toy2.jpg');
+   background-size: 870px;
+   background-repeat: repeat;
+   min-height: 200px; 
+   background-position: center center;
+   color:white;*/
+   height: 100px; 
    display: flex;
-   flex-direction: row; 
-   align-items: center;
-   padding: 20px;
-   justify-content:space-between;   
+   justify-content: space-between;
+   flex-direction: row;
+   align-items:end;
+  
 
 }
 
 
 nav button{
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     border-color:  rgb(255, 255, 255);
     color: rgb(7, 6, 6);
     border-radius: 100px;
@@ -33,6 +52,8 @@ nav button{
     padding: 0 10px;
     margin: 10px;
     font-weight: bold;
+  
+
 }
 
 nav button:hover{
@@ -41,18 +62,14 @@ nav button:hover{
 }
 
 .container{
-    background-color:rgb(233, 170, 217);
-    width: 100%;
-    margin: 60 auto;
-    display: flex;
-    flex-direction: row; 
-    justify-content: cente;
+    background-color:rgb(250, 248, 248);
     padding: 30px;
-    
+    border-radius: 10px;
 }
 
 .container li{
-    list-style: none;
+    background-color :rgb(250, 248, 248);
+    list-style:none;
     border-bottom: 1px black solid;
     
     
@@ -69,7 +86,8 @@ nav button:hover{
 }
 
 body{
-    background-color :rgb(87, 152, 212);
+    background-color: rgb(250, 248, 248);
+    background-size: 100px;
     width: 100%;
 }
 

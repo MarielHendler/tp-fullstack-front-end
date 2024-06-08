@@ -1,10 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('login-form').addEventListener('btnLogin', async function (event) {
+    document.getElementById('login-form').addEventListener('submit', async function (event) {
         event.preventDefault();
-
-
-        console.log("llegue hasta aca");
-
 
         const email = document.getElementById('email').value;  
         const password = document.getElementById('password').value;
@@ -16,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(data);
         const mensajeDiv = document.getElementById('mensaje');
-
+        
         try {
             const response = await fetch('http://localhost:8080/auth/login', {
                 method: 'POST',
@@ -27,8 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             console.log(response);
             if (response.ok) {
-                mensajeDiv.textContent = 'Registro exitoso';
-                mensajeDiv.style.color = 'green';
+                const result = await response.json();
+                const token = result;
+                localStorage.setItem('token', token);
+                window.location.href = 'home.html';
             } else {
                 const errorData = await response.text();
                 console.log(errorData);
