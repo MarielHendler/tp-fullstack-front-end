@@ -91,6 +91,10 @@ body{
     width: 100%;
 }
 
+.imagenespeluches{
+    width: 200px;
+
+}
 @media (max-width:375px) {
     
     .nav{

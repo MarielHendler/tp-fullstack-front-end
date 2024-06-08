@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded",function(){
             nodo = document.createTextNode(texto)
             h3.appendChild(nodo)
 
-           /* let img = document.createElement("img");
-            img.src = getImage(element.pelucheUsuarioRanking.color);
-            img.alt = element.pelucheUsuarioRanking.tipo + " " + element.pelucheUsuarioRanking.color;
-*/
+            let img = document.createElement("img");
+            img.src = getImagen(element.pelucheUsuarioRanking.tipo,element.pelucheUsuarioRanking.color);
+            img.classList.add("imagenespeluches")
+
             li.appendChild(div);
-          //  li.appendChild(img);
+            li.appendChild(img);
             li.appendChild(h3);
 
             rankingList.appendChild(li);
@@ -49,36 +49,43 @@ document.addEventListener("DOMContentLoaded",function(){
 
     }
 
-  /*  function getImage(tipo, color) {
-        const basePath = "images/";
-        let fileName = "";
+    function getImagen(tipo, color) {
+        const ruta = "images\\"; 
+
+        let nombre = "";
 
         switch(tipo.toLowerCase()) {
             case "gato":
-                fileName = "gato";
+                nombre = "gato";
                 break;
             case "mapache":
-                fileName = "mapache";
+                nombre = "mapache";
                 break;
-             case "perro":
-                fileName = "perro";
-                break;  
+            case "perro":
+                nombre = "perro";
+                break;
+            default:
+                nombre = "default";
+                break;
         }
 
         switch(color.toLowerCase()) {
             case "rosa":
-                fileName += "rosa.jpg";
+                nombre += "rosa.jpg";
                 break;
             case "verde":
-                fileName += "verde.jpg";
+                nombre += "verde.jpg";
                 break;
             case "amarillo":
-                fileName += "amarillo.jpg";
+                nombre += "amarillo.jpg";
                 break;
             // Añadir más casos según los colores disponibles
-  
+            default:
+                nombre += "default.jpg";
+                break;
         }
-        
-        return basePath + fileName;
-    }*/
+
+        const rutaimagen = ruta + nombre;
+        return rutaimagen;
+    }
 });
