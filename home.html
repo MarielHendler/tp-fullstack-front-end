@@ -13,16 +13,15 @@
     <nav>
         <h1 class="titulopagina" onclick="location.href='./index.html'">TOYLAND</h1>
         <div id="navdiv">
-            <button id="mispeluches" onclick="location.href='./register.html'">Ver mis peluches</button>
+            <button id="mispeluches" onclick="location.href='./register.html'">Comprar peluches</button>
 
             <button id="logout">Cerrar sesión</button>
         </div>
     </nav>
-    <div class="contenido">
-        <h2>Bienvenid@ a ToyLand</h2>
-        <button id="comprarpeluche" onclick="location.href='./register.html'">Quiero comprar peluche</button>
-        <ul class="todoslospeluches" id='todoslospeluches'>
-        </ul>
+    <div id="auth-content" class="contenido">
+        <h2>Bienvenid@ a ToyLand, estos son sus peluches</h2>
+        <ul class="usuariopeluche" id='peluchesusuario'> </ul>
+        <div id="paginacion" class="paginacion"></div>
     </div>
     <div id="mensaje"></div>
 </body>

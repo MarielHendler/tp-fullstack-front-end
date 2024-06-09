@@ -1,62 +1,151 @@
+const API_URL = "http://localhost:8080/usuario/peluches";
+
 document.addEventListener('DOMContentLoaded', async function () {
     const logoutButton = document.getElementById('logout');
+    const mensajeDiv = document.getElementById('mensaje');
+    const authContent = document.getElementById('auth-content');
+    const peluchesList = document.getElementById('peluchesusuario');
+    const NavButtons = document.getElementById('navdiv');
 
     logoutButton.addEventListener('click', function () {
         localStorage.removeItem('token');
         window.location.href = './index.html';
     });
 
-
     const token = localStorage.getItem('token');
     console.log('Token guardado:', token);
-    const mensajeDiv = document.getElementById('mensaje');
 
     if (token == null) {
-        mensajeDiv.textContent = 'No estás autenticado. Por favor, inicia sesión.';
+        mensajeDiv.textContent = 'No estás autenticado. Por favor, iniciá sesión.';
         mensajeDiv.style.color = 'red';
+        mensajeDiv.style.textAlign = 'center';
+        mensajeDiv.style.padding = '20px';
+
+        authContent.style.display = 'none'; //no muestro mi contenido
+        NavButtons.style.display = 'none'; //no muestro la botonera de home
+
+        const btnLogin = document.createElement('button');
+        btnLogin.textContent = 'Inicia sesión aquí';
+        btnLogin.style.display = 'block';
+        btnLogin.style.margin = '10px auto';
+        btnLogin.style.fontSize = '16px';
+        btnLogin.addEventListener('click', function () {
+            window.location.href = 'login.html';
+        });
+        mensajeDiv.appendChild(btnLogin);
         return;
     }
 
     try {
-        const response = await fetch('http://localhost:8080/usuario/peluches', {
+        const response = await fetch(API_URL, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
             }
         });
-        
+
         if (response.ok) {
             const peluches = await response.json();
             console.log(peluches);
+
             peluches.forEach(peluche => {
-                console.log(peluche.tipo);
                 const li = document.createElement('li');
-                li.textContent = peluche.tipo; 
+
+                // Crear y agregar texto del tipo de peluche
+                const tipoText = document.createElement('p');
+                tipoText.textContent = ` ${peluche.tipo} ${peluche.color} `;
+                li.appendChild(tipoText);
+
+                // Crear y agregar texto del accesorio de peluche
+                const accesorioText = document.createElement('p');
+                accesorioText.textContent = `con ${peluche.accesorio}`;
+                li.appendChild(accesorioText);
+
+                // Obtener la imagen del peluche
+                let imgSrc = getImagen(peluche.tipo, peluche.color);
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = peluche.tipo;
+                console.log(img.alt);
+                img.style.width = '100px';
+
+                li.appendChild(img);
+
                 peluchesList.appendChild(li);
+
+
             });
         } else {
             console.log("entro al else");
             const errorText = await response.text();
             mensajeDiv.textContent = 'Error al cargar los peluches: ' + errorText;
             mensajeDiv.style.color = 'red';
+            mensajeDiv.style.textAlign = 'center';
+            mensajeDiv.style.padding = '20px';
+
+            authContent.style.display = 'none'; //no muestro mi contenido
+            NavButtons.style.display = 'none'; //no muestro la botonera de home
+
             localStorage.removeItem('token');
             btnLogin.style.display = 'block';
-            btnLogin.addEventListener('click', function() {
+
+            const btnLogin = document.createElement('button');
+            btnLogin.textContent = 'Inicia sesión aquí';
+            btnLogin.style.display = 'block';
+            btnLogin.style.margin = '10px auto';
+            btnLogin.style.fontSize = '16px';
+            btnLogin.addEventListener('click', function () {
                 window.location.href = 'login.html';
             });
+            mensajeDiv.appendChild(btnLogin);
+            return;
         }
     } catch (error) {
         console.log("entro al catch");
         console.log(error);
-        mensajeDiv.textContent = 'Error al verificar la autenticación. Por favor, inicia sesión.';
+        mensajeDiv.textContent = 'Ha ocurrido un error inesperado.';
         mensajeDiv.style.color = 'red';
-        localStorage.removeItem('token');
-        btnLogin.style.display = 'block';
-        btnLogin.addEventListener('click', function() {
-            window.location.href = 'login.html';
-        });
+        return;
     }
-});
 
+    function getImagen(tipo, color) {
+        const ruta = "images\\";
 
+        let nombre = "";
+
+        switch (tipo.toLowerCase()) {
+            case "gato":
+                nombre = "gato";
+                break;
+            case "mapache":
+                nombre = "mapache";
+                break;
+            case "perro":
+                nombre = "perro";
+                break;
+            default:
+                nombre = "default";
+                break;
+        }
+
+        switch (color.toLowerCase()) {
+            case "rosa":
+                nombre += "rosa.jpg";
+                break;
+            case "verde":
+                nombre += "verde.jpg";
+                break;
+            case "amarillo":
+                nombre += "amarillo.jpg";
+                break;
+            // Añadir más casos según los colores disponibles
+            default:
+                nombre += "default.jpg";
+                break;
+        }
+
+        const rutaimagen = ruta + nombre;
+        return rutaimagen;
+    }
+}); 
