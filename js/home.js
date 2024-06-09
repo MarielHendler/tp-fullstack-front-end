@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 btnEliminar.addEventListener('click', function () {
                     const confirmacion = confirm('¿Está seguro de querer eliminar su peluche?');
                     if (confirmacion) {
-                        deletePeluche(peluche.id);
+                        deletePeluche(peluche._id);
                     }
                 });
 
