@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', async function () {
+    const logoutButton = document.getElementById('logout');
+
+    logoutButton.addEventListener('click', function () {
+        localStorage.removeItem('token');
+        window.location.href = './index.html';
+    });
+
+
     const token = localStorage.getItem('token');
     console.log('Token guardado:', token);
     const mensajeDiv = document.getElementById('mensaje');
-    const contenidoDiv = document.getElementById('contenido');
-    const btnLogin = document.getElementById('btnLogin');
 
     if (token == null) {
         mensajeDiv.textContent = 'No estás autenticado. Por favor, inicia sesión.';
         mensajeDiv.style.color = 'red';
-        btnLogin.addEventListener('click', function() {
-            window.location.href = 'login.html';
-        });
         return;
     }
 
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 'Content-Type': 'application/json'
             }
         });
-
+        
         if (response.ok) {
             const peluches = await response.json();
             console.log(peluches);
@@ -32,7 +35,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                 li.textContent = peluche.tipo; 
                 peluchesList.appendChild(li);
             });
-            contenidoDiv.style.display = 'block';
         } else {
             console.log("entro al else");
             const errorText = await response.text();
@@ -56,3 +58,5 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     }
 });
+
+

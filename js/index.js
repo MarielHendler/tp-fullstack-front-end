@@ -1,7 +1,7 @@
 const API_URL = "http://localhost:8080/ranking";
 
 document.addEventListener("DOMContentLoaded",function(){
-
+    
     fetch(API_URL)
     // Exito
     .then(response => response.json())  // convertir a json

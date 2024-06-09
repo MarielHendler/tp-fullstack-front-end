@@ -1,8 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+
 *
 {
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: "News Cycle", sans-serif;
+}
+
+.titulopagina{
+    color:black;
+    font-size: 40px;
+    display:flex;
+    flex-direction: row; 
+    align-items:end;
+    padding:10px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+nav{
+   background-image: url('./images/toy2.jpg');
+   background-size: 100%;
+   background-position: center center;
+   color:white;
+   height: 200px; 
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items:end;
+   cursor:pointer;
+}
+
+
+nav button{
+    background-color: #ffffff;
+    border-color:  rgb(255, 255, 255);
+    color: rgb(7, 6, 6);
+    border-radius: 100px;
+    height: 40px;
+    padding: 0 10px;
+    margin: 10px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+nav button:hover{
+    background-color: rgb(214, 208, 208);
+    border-color:  rgb(214, 208, 208);
+}
+
+.listapeluches{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    list-style:none;
+    
+}
+
+.contenido{
+    margin:20px;
+    padding-left: 30%;
+}
+
+body{
+    background-color: rgb(250, 248, 248);
+    background-size: 100px;
+    width: 100%;
+}
+
+.imagenespeluches{
+    width: 200px;
+
+}
+@media (max-width:375px) {
+    
+    nav{
+        height: 10%;
+        flex-direction: row;
+    }
+
+    nav button{
+        margin:0px;
+    }
+
+    .listapeluches{
+        width: 100%;
+        padding: 10px;
+    }
+
+    body{
+        width: 100%;
+    }
+    .ranking{
+        margin:20px;
+        padding-left: 10%;
+    }
+    
 }

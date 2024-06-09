@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+<html>
+
+<head> <!-- no se muestra en la página-->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="home.css">
     <script src='js/home.js'></script>
-</head>
-<body>
-    <div id="mensaje"></div>
-    <button id="btnLogin">Iniciar sesión</button>
-    
-    <div id="contenido" style="display:none;">
-        <!-- Contenido protegido aquí -->
-        <h1>Bienvenido a la página home</h1>
-    </div>
-    <ul id="peluches-list"></ul>
+    <title>ToyLand | Tu peluche personalizado </title>
 
+</head>
+
+<body>
+    <nav>
+        <h1 class="titulopagina" onclick="location.href='./index.html'">TOYLAND</h1>
+        <div id="navdiv">
+            <button id="mispeluches" onclick="location.href='./register.html'">Ver mis peluches</button>
+
+            <button id="logout">Cerrar sesión</button>
+        </div>
+    </nav>
+    <div class="contenido">
+        <h2>Bienvenid@ a ToyLand</h2>
+        <button id="comprarpeluche" onclick="location.href='./register.html'">Quiero comprar peluche</button>
+        <ul class="todoslospeluches" id='todoslospeluches'>
+        </ul>
+    </div>
+    <div id="mensaje"></div>
 </body>
+
 </html>

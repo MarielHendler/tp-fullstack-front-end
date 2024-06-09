@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
 
-        console.log("esto llama bien al codigo")
 
         const nombre = document.getElementById('nombre').value;
         const apellido = document.getElementById('apellido').value;
