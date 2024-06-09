@@ -1,43 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+
 *
 {
+    margin: 0px;
+    padding: 0;
     box-sizing: border-box;
     font-family: "News Cycle", sans-serif;
 }
-body {
-    background-color :rgb(87, 152, 212);
-    display: flex;
+
+.titulopagina{
+    color:black;
+    font-size: 40px;
+    display:flex;
+    flex-direction: row; 
+    align-items:end;
+    padding:10px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor:pointer;
+}
+
+
+nav{
+   background-image: url('./images/toy2.jpg');
+   background-size: 100%;
+   background-position: center center;
+   color:white;
+   height: 200px; 
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items:end;
+}
+
+
+nav button{
+    background-color: #ffffff;
+    border-color:  rgb(255, 255, 255);
+    color: rgb(7, 6, 6);
+    border-radius: 100px;
+    height: 40px;
+    padding: 0 10px;
+    margin: 10px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+nav button:hover{
+    background-color: rgb(214, 208, 208);
+    border-color:  rgb(214, 208, 208);
+}
+
+body{
+    background-color: white;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    
 }
-.formulario-ingreso{
-    background-color: #fff;
-    padding: 60px;
+
+.formulario-ingreso {
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 30%;
+    padding-right: 40%;
+    margin:20px;
 }
-.form-grupo {
-    margin-bottom: 15px;
-}
+
 .form-grupo label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
+
 .form-grupo input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
 }
+
 .form-grupo button {
-    width: 100%;
-    padding: 10px;
+    margin-top: 2%;
+    width: 30%;
+    padding: 8px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
 .form-grupo button:hover {
     background-color: #45a049;
+}
+
+@media (max-width:375px) {
+    
+    nav{
+        height: 10%;
+        flex-direction: row;
+    }
+
+    nav button{
+        margin:0px;
+    }
+
+    body{
+        width: 100%;
+    }
+
+    .formulario-ingreso {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .form-grupo button {
+        margin-top: 2%;
+        width: 50%;
+        padding: 8px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+
+
 }

@@ -61,6 +61,12 @@ nav button:hover{
     justify-content: space-between;
     padding: 20px;
     list-style:none;
+    
+}
+
+.ranking{
+    margin:20px;
+    padding-left: 30%;
 }
 
 body{
@@ -92,5 +98,9 @@ body{
     body{
         width: 100%;
     }
-
+    .ranking{
+        margin:20px;
+        padding-left: 10%;
+    }
+    
 }

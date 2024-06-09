@@ -116,4 +116,15 @@ body{
         padding-right: 20%;
     }
 
+    .form-grupo button {
+        margin-top: 2%;
+        width: 40%;
+        padding: 8px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
 }

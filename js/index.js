@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded",function(){
             let h3 = document.createElement("h3")
 
             let texto = (index+1) + ". " +  
-                        element.pelucheUsuarioRanking.tipo + " "
+                        element.pelucheUsuarioRanking.tipo+ " "
                       + element.pelucheUsuarioRanking.color + " con "
                       + element.pelucheUsuarioRanking.accesorio
 

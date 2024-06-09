@@ -10,8 +10,14 @@
 </head>
 
 <body>
-            <div class="formulario-ingreso">
-            <form id="login-form">
+    <nav>
+        <h1 class="titulopagina" onclick="location.href='./index.html'">TOYLAND</h1>
+        <div class="navdiv">
+            <button id="registrarse" onclick="location.href='./register.html'">Registrarse</button>
+        </div>
+    </nav>
+    <div class="formulario-ingreso">
+        <form id="login-form">
             <div class="form-grupo">
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" required>
@@ -22,7 +28,7 @@
             </div>
             <div class="form-grupo">
                 <button type="submit" id="btnLogin">Iniciar sesión</button>
-             
+
             </div>
             <div id="mensaje"></div>
     </div>

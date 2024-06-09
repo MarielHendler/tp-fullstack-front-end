@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('registration-form').addEventListener('submit', async function (event) {
+    document.getElementById('formulario-registro').addEventListener('submit', async function (event) {
         event.preventDefault();
 
 
