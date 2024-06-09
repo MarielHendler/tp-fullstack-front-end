@@ -20,6 +20,7 @@
     font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-style: normal;
+    cursor:pointer;
 }
 
 
@@ -33,7 +34,7 @@ nav{
    justify-content: space-between;
    flex-direction: row;
    align-items:end;
-   cursor:pointer;
+
 }
 
 
@@ -54,6 +55,7 @@ nav button:hover{
     border-color:  rgb(214, 208, 208);
 }
 
+
 #peluchesusuario {
     display: flex;
     flex-wrap: nowrap;
@@ -72,6 +74,10 @@ nav button:hover{
     text-align: center;
     font-weight: bold;
 }
+
+#peluchesusuario button{
+    width: 50%;
+}
 .contenido{
     margin:20px;
     padding-left: 30%;
@@ -87,7 +93,7 @@ body{
     width: 200px;
 
 }
-@media (max-width:375px) {
+@media (max-width:500px) {
     
     nav{
         height: 10%;
@@ -98,17 +104,30 @@ body{
         margin:0px;
     }
 
-    .listapeluches{
-        width: 100%;
-        padding: 10px;
-    }
-
     body{
         width: 100%;
     }
-    .ranking{
-        margin:20px;
-        padding-left: 10%;
+
+    #peluchesusuario {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
+    
+    #peluchesusuario li {
+        box-sizing: border-box;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-weight: bold;
+    }
+    .contenido{
+        margin:0px;
+        padding-left: 0%;
+    }
+    
     
 }

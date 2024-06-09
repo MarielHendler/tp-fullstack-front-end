@@ -69,12 +69,23 @@ document.addEventListener('DOMContentLoaded', async function () {
                 img.alt = peluche.tipo;
                 console.log(img.alt);
                 img.style.width = '100px';
-
                 li.appendChild(img);
 
+                // Crear botón eliminar
+                const btnEliminar = document.createElement('button');
+                btnEliminar.textContent = 'Eliminar Peluche';
+                btnEliminar.style.color = 'red';
+
+                btnEliminar.addEventListener('click', function () {
+                    const confirmacion = confirm('¿Está seguro de querer eliminar su peluche?');
+                    if (confirmacion) {
+                        deletePeluche(peluche.id);
+                    }
+                });
+
+                li.appendChild(btnEliminar);
+
                 peluchesList.appendChild(li);
-
-
             });
         } else {
             console.log("entro al else");
@@ -147,5 +158,28 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const rutaimagen = ruta + nombre;
         return rutaimagen;
+    }
+
+    async function deletePeluche(pelucheId) {
+        try {
+            const response = await fetch(`${API_URL}/${pelucheId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+    
+            if (response.ok) {
+                // Eliminación exitosa, actualizar la lista de peluches
+                // O realizar cualquier otra acción necesaria
+                console.log('Peluche eliminado con éxito');
+            } else {
+                // Manejar el error de eliminación
+                console.error('Error al eliminar el peluche');
+            }
+        } catch (error) {
+            console.error('Error al comunicarse con el servidor:', error);
+        }
     }
 }); 
