@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head> <!-- no se muestra en la página-->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="comprar.css">
+    <script src='js/comprar.js'></script>
+    <title>ToyLand | Tu peluche personalizado </title>
+
+</head>
+
+<body>
+    <nav>
+        <h1 class="titulopagina" onclick="location.href='./index.html'">TOYLAND</h1>
+        <div id="navdiv">
+            <button id="mispeluches" onclick="location.href='./home.html'">Mis peluches</button>
+
+            <button id="logout">Cerrar sesión</button>
+        </div>
+    </nav>
+    <div id="auth-content" class="contenido">
+        <h2>Personalizá tu nuevo peluche</h2>
+        <div class="formulario-peluche">
+            <form id="personalizado-peluche">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo"></select>
+
+                <label for="color">Color:</label>
+                <select id="color" name="color"></select>
+
+                <label for="accesorio">Accesorio:</label>
+                <select id="accesorio" name="accesorio"></select>
+
+                <button type="submit">Personalizar Peluche</button>
+            </form>
+        </div>
+    </div>
+    <div id="mensaje"></div>
+
+</body>
+
+</html>

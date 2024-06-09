@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+
+*
+{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "News Cycle", sans-serif;
+}
+
+.titulopagina{
+    color:black;
+    font-size: 40px;
+    display:flex;
+    flex-direction: row; 
+    align-items:end;
+    padding:10px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor:pointer;
+}
+
+
+nav{
+   background-image: url('./images/toy2.jpg');
+   background-size: 100%;
+   background-position: center center;
+   color:white;
+   height: 200px; 
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items:end;
+
+}
+
+
+nav button{
+    background-color: #ffffff;
+    border-color:  rgb(255, 255, 255);
+    color: rgb(7, 6, 6);
+    border-radius: 100px;
+    height: 40px;
+    padding: 0 10px;
+    margin: 10px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+nav button:hover{
+    background-color: rgb(214, 208, 208);
+    border-color:  rgb(214, 208, 208);
+}
+
+
+#peluchesusuario {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Para permitir desplazamiento horizontal si hay muchos elementos */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.formulario-peluche {
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 30%;
+    padding-right: 40%;
+    margin:20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+
+form button {
+    margin-top: 2%;
+    width: 30%;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+h2{
+    padding-left: 30%;
+}
+.contenido{
+    margin:30px;
+    padding-left: 0%;
+}
+
+body{
+    background-color: white;
+    background-size: 100px;
+    width: 100%;
+}
+
+.imagenespeluches{
+    width: 200px;
+
+}
+@media (max-width:500px) {
+    
+    nav{
+        height: 10%;
+        flex-direction: row;
+    }
+
+    nav button{
+        margin:0px;
+        padding: 0px;
+    }
+
+    body{
+        width: 100%;
+    }
+    
+    .formulario-peluche {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .formulario-peluche button {
+        margin-top: 2%;
+        width: 50%;
+        padding: 8px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .contenido{
+        margin:0px;
+        padding-left: 0%;
+    }
+    
+    #peluchesusuario button{
+        width: 20%;
+    }
+    
+}

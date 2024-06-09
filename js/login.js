@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('login-form').addEventListener('submit', async function (event) {
         event.preventDefault();
 
-        const email = document.getElementById('email').value;  
+        const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
         const data = {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(data);
         const mensajeDiv = document.getElementById('mensaje');
-        
+
         try {
             const response = await fetch('http://localhost:8080/auth/login', {
                 method: 'POST',

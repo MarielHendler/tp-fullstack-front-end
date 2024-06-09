@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 btnEliminar.addEventListener('click', function () {
                     const confirmacion = confirm('¿Está seguro de querer eliminar su peluche?');
                     if (confirmacion) {
-                        deletePeluche(peluche._id); 
+                        deletePeluche(peluche._id);
                     }
                 });
 
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     'Content-Type': 'application/json'
                 }
             });
-    
+
             if (response.ok) {
                 mensajeDiv.textContent = 'Peluche eliminado correctamente';
                 mensajeDiv.style.color = 'green';

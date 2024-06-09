@@ -2,63 +2,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
 
-*
-{
+* {
     margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: "News Cycle", sans-serif;
 }
 
-.titulopagina{
-    color:black;
+.titulopagina {
+    color: black;
     font-size: 40px;
-    display:flex;
-    flex-direction: row; 
-    align-items:end;
-    padding:10px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    padding: 10px;
     font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
-nav{
-   background-image: url('./images/toy2.jpg');
-   background-size: 100%;
-   background-position: center center;
-   color:white;
-   height: 200px; 
-   display: flex;
-   justify-content: space-between;
-   flex-direction: row;
-   align-items:end;
+nav {
+    background-image: url('./images/toy2.jpg');
+    background-size: 100%;
+    background-position: center center;
+    color: white;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: end;
 }
 
 
-nav button{
+nav button {
     background-color: #ffffff;
-    border-color:  rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
     color: rgb(7, 6, 6);
     border-radius: 100px;
     height: 40px;
     padding: 0 10px;
     margin: 10px;
     font-weight: bold;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-nav button:hover{
+nav button:hover {
     background-color: rgb(214, 208, 208);
-    border-color:  rgb(214, 208, 208);
+    border-color: rgb(214, 208, 208);
 }
 
-body{
+body {
     background-color: white;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .formulario-ingreso {
@@ -66,7 +65,7 @@ body{
     border-radius: 10px;
     padding-left: 30%;
     padding-right: 40%;
-    margin:20px;
+    margin: 20px;
 }
 
 .form-grupo label {
@@ -97,17 +96,17 @@ body{
 }
 
 @media (max-width:500px) {
-    
-    nav{
+
+    nav {
         height: 10%;
         flex-direction: row;
     }
 
-    nav button{
-        margin:0px;
+    nav button {
+        margin: 0px;
     }
 
-    body{
+    body {
         width: 100%;
     }
 
