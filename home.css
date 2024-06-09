@@ -78,9 +78,13 @@ nav button:hover{
 #peluchesusuario button{
     width: 50%;
 }
-.contenido{
-    margin:20px;
+
+h2{
     padding-left: 30%;
+}
+.contenido{
+    margin:30px;
+    padding-left: 0%;
 }
 
 body{
@@ -129,5 +133,8 @@ body{
         padding-left: 0%;
     }
     
+    #peluchesusuario button{
+        width: 20%;
+    }
     
 }

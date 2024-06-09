@@ -8,13 +8,6 @@ document.addEventListener("DOMContentLoaded",function(){
     .then(json => mostrarRanking(json))    //imprimir los datos en la consola
     .catch(err => console.log('Solicitud fallida', err)); // Capturar errores
 
-
-
-    let btn = document.getElementById("registrarse")
-    btn.addEventListener("click",function(){
-    })
-   
-
     function mostrarRanking(json){
         console.log(json);
         let rankingList = document.getElementById("rankingpeluche");
@@ -28,11 +21,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
             let h3 = document.createElement("h3")
 
-            let texto = (index+1) + ". " +  
-                        element.pelucheUsuarioRanking.tipo+ " "
-                      + element.pelucheUsuarioRanking.color + " con "
-                      + element.pelucheUsuarioRanking.accesorio
-
+            let texto = `${index + 1}. ${element.pelucheUsuarioRanking.tipo} ${element.pelucheUsuarioRanking.color} con ${element.pelucheUsuarioRanking.accesorio} - Vendidos: ${element.cantidad}`;
             nodo = document.createTextNode(texto)
             h3.appendChild(nodo)
 

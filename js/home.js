@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 btnEliminar.addEventListener('click', function () {
                     const confirmacion = confirm('¿Está seguro de querer eliminar su peluche?');
                     if (confirmacion) {
-                        deletePeluche(peluche._id);
+                        deletePeluche(peluche._id); 
                     }
                 });
 
@@ -171,11 +171,13 @@ document.addEventListener('DOMContentLoaded', async function () {
             });
     
             if (response.ok) {
-                // Eliminación exitosa, actualizar la lista de peluches
-                // O realizar cualquier otra acción necesaria
+                mensajeDiv.textContent = 'Peluche eliminado correctamente';
+                mensajeDiv.style.color = 'green';
+                window.location.href = 'home.html';
                 console.log('Peluche eliminado con éxito');
             } else {
-                // Manejar el error de eliminación
+                mensajeDiv.textContent = 'Error al eliminar el peluche';
+                mensajeDiv.style.color = 'red';
                 console.error('Error al eliminar el peluche');
             }
         } catch (error) {
