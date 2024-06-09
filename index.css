@@ -4,14 +4,14 @@
 
 *
 {
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: "News Cycle", sans-serif;
 }
 
 .titulopagina{
-    color:rgb(252, 252, 252);
+    color:black;
     font-size: 40px;
     display:flex;
     flex-direction: row; 
@@ -20,26 +20,20 @@
     font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-style: normal;
-
-      
 }
 
 
 nav{
-   background-color :rgb(87, 152, 212);
-   /*background-image: url('./images/toy2.jpg');
-   background-size: 870px;
-   background-repeat: repeat;
-   min-height: 200px; 
+   background-image: url('./images/toy2.jpg');
+   background-size: 100%;
    background-position: center center;
-   color:white;*/
-   height: 100px; 
+   color:white;
+   height: 200px; 
    display: flex;
    justify-content: space-between;
    flex-direction: row;
    align-items:end;
-  
-
+   cursor:pointer;
 }
 
 
@@ -52,8 +46,7 @@ nav button{
     padding: 0 10px;
     margin: 10px;
     font-weight: bold;
-  
-
+    cursor:pointer;
 }
 
 nav button:hover{
@@ -61,28 +54,13 @@ nav button:hover{
     border-color:  rgb(214, 208, 208);
 }
 
-.container{
-    background-color:rgb(250, 248, 248);
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.container li{
-    background-color :rgb(250, 248, 248);
-    list-style:none;
-    border-bottom: 1px black solid;
-    
-    
-}
-
-.rankinglistapeluche{
+.listapeluches{
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-
-
+    list-style:none;
 }
 
 body{
@@ -97,29 +75,22 @@ body{
 }
 @media (max-width:375px) {
     
-    .nav{
-        width: 100%;
-        flex-direction: column;
-
-    }
-    .container{
-        width: 100%;
-        flex-direction: column;
+    nav{
+        height: 10%;
+        flex-direction: row;
     }
 
-    .ranking{
-        width: 100%;
-        padding: 10px;
+    nav button{
+        margin:0px;
     }
 
-    .rankinglistapeluche{
+    .listapeluches{
         width: 100%;
         padding: 10px;
     }
 
     body{
         width: 100%;
-        padding: 10px;
     }
 
 }

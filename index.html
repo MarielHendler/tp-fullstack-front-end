@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head> <!-- no se muestra en la página-->
-    <meta name='viewport' content='width=device-width, initial-scale=1'>        
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src='js/index.js'></script>
     <title>ToyLand | Tu peluche personalizado </title>
 
 </head>
-    <body>
-        <nav>
-            <h1 class="titulopagina">TOYLAND</h1>
-            <div class="navdiv">
-                <button id="registrarse" onclick="location.href='./register.html'">Registrarse</button>
-                
-                <button id="login" onclick="location.href='./login.html'">Iniciar sesión</button>
-                
-            </div>
-        </nav>
-            <div class="container">
-                <div class = "ranking">
-                    <h2>Estos son los 3 peluches más elegidos por los usuarios :</h2>
-                    <ul class="lista" id='rankingpeluche'>
-                    </ul>
-               </div>
-            </div>
-            <!--<img id="photo-peluche-perro" width=200 height=200 title="Foto peluche perro" alt="foto peluche perro"
-                src="images\perroverde.JPG">\-->
 
+<body>
+    <nav>
+        <h1 class="titulopagina" onclick="location.href='./index.html'">TOYLAND</h1>
+        <div class="navdiv">
+            <button id="registrarse" onclick="location.href='./register.html'">Registrarse</button>
 
-
+            <button id="login" onclick="location.href='./login.html'">Iniciar sesión</button>
+        </div>
+    </nav>
+    <div class="ranking">
+        <h2>Estos son los 3 peluches más elegidos por los usuarios :</h2>
+        <ul class="listapeluches" id='rankingpeluche'>
+        </ul>
+    </div>
+    </div>
+</body>
 
 </html>

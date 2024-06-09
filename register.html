@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="register.css">
     <script src='./js/register.js'></script>
-    <title>Registro en Toyland</title>
+    <title>Registrate en Toyland</title>
 </head>
 
 <body>
-    <div class="formulario-registro">
-        <form id="registration-form">
+    <nav>
+        <h1 class="titulopagina" onclick="location.href='./index.html'">TOYLAND</h1>
+        <div class="navdiv">
+            <button id="login" onclick="location.href='./login.html'">Iniciar sesión</button>
+        </div>
+    </nav>
+    <div class="contenido">
+        <form id="formulario-registro">
             <div class="form-grupo">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -33,7 +39,7 @@
             </div>
             <div id="mensaje"></div>
     </div>
-    </form>
+        </form>
     </div>
 </body>
 
