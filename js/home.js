@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const mensajeDiv = document.getElementById('mensaje');
     const authContent = document.getElementById('auth-content');
     let peluchesList = document.getElementById('peluchesusuario');
+    let coleccionDiv = document.getElementById('coleccion');
     const NavButtons = document.getElementById('navdiv');
 
     logoutButton.addEventListener('click', function () {
@@ -47,8 +48,29 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         if (response.ok) {
             const peluches = await response.json();
-            console.log(peluches);
+            
+            //muestra distintos mensajes en caso de que tenga o no peluches en la colección.
+            if(peluches.length  === 0){
 
+                const mensajeNoPeluches = document.createElement('h2');
+                mensajeNoPeluches.textContent = 'Bienvenid@ a ToyLand, aún no tenés peluches en tu colección.';
+                coleccionDiv.appendChild(mensajeNoPeluches);
+                
+                const btnComprar = document.createElement('button');
+                btnComprar.textContent = 'Comprar peluche';
+                btnComprar.setAttribute('class', 'btncomprarpeluche');
+                btnComprar.addEventListener('click', function () {
+                    window.location.href = 'comprar.html';
+                });
+                coleccionDiv.appendChild(btnComprar);
+                return;
+            }else{
+                const mensajeNoPeluches = document.createElement('h2');
+                mensajeNoPeluches.textContent = 'Bienvenid@ a ToyLand, estos son los peluches de tu colección.';
+                coleccionDiv.appendChild(mensajeNoPeluches);
+            }
+
+            
             var contador = 0;
             let ul;
           

@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 mensajeDiv.textContent = 'Registro exitoso';
                 mensajeDiv.style.color = 'green';
+                
             } else {
                 const errorData = await response.text();
                 console.log(errorData);

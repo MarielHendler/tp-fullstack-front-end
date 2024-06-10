@@ -78,19 +78,22 @@ nav button:hover {
     
 }
 
-/* 
-#peluchesusuario li {
-    
-    flex: 0 0 auto;
-    box-sizing: border-box;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-    font-weight: bold;
-} */
+.coleccion{
+    display:block;
+}
 
-
+.coleccion button {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Para que el botón ocupe todo el ancho disponible */
+}
 
 #peluchesusuario button {
     width: 50%;
@@ -115,6 +118,11 @@ body {
 
 }
 
+.btncomprarpeluche{
+    height: 40px;
+
+}
+
 @media (max-width:500px) {
 
     nav {
@@ -123,19 +131,20 @@ body {
     }
 
     nav button {
-        margin: 0px;
+        margin:0px;
+        padding: 0px;
     }
 
     body {
         width: 100%;
     }
 
-    #peluchesusuario {
+    .usuariopeluche {
         display: flex;
         flex-direction: column;
         list-style-type: none;
         padding: 0;
-        margin: 0;
+        max-height: fit-content;
     }
 
     #peluchesusuario li {
@@ -154,6 +163,21 @@ body {
 
     #peluchesusuario button {
         width: 20%;
+    }
+
+    h2{
+        display:flex;
+        padding-left: 0%;
+    }
+    .coleccion button{
+        margin-top: 2%;
+        width: 50%;
+        padding: 8px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
     }
 
 }
