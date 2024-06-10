@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const logoutButton = document.getElementById('logout');
     const mensajeDiv = document.getElementById('mensaje');
     const authContent = document.getElementById('auth-content');
-    const peluchesList = document.getElementById('peluchesusuario');
+    let peluchesList = document.getElementById('peluchesusuario');
     const NavButtons = document.getElementById('navdiv');
 
     logoutButton.addEventListener('click', function () {
@@ -49,8 +49,19 @@ document.addEventListener('DOMContentLoaded', async function () {
             const peluches = await response.json();
             console.log(peluches);
 
+            var contador = 0;
+            let ul;
+          
             peluches.forEach(peluche => {
+                if (contador % 5 === 0 || contador === 0) {
+                    // Cada 5 peluches, creamos una nueva lista ul
+                    ul = document.createElement('ul');
+                    ul.setAttribute('class', 'usuariopeluche');
+                    authContent.appendChild(ul);
+                    
+                }
                 const li = document.createElement('li');
+                li.setAttribute('class','lineapeluches')
 
                 // Crear y agregar texto del tipo de peluche
                 const tipoText = document.createElement('p');
@@ -85,7 +96,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 li.appendChild(btnEliminar);
 
-                peluchesList.appendChild(li);
+                ul.appendChild(li);
+                contador++;
             });
         } else {
             console.log("entro al else");

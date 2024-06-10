@@ -86,7 +86,7 @@ label {
 
 form button {
     margin-top: 2%;
-    width: 30%;
+    width: 50%;
     padding: 8px;
     background-color: #4CAF50;
     color: white;
@@ -140,7 +140,7 @@ body{
 
     .formulario-peluche button {
         margin-top: 2%;
-        width: 50%;
+        width: 80%;
         padding: 8px;
         background-color: #4CAF50;
         color: white;
@@ -154,8 +154,5 @@ body{
         padding-left: 0%;
     }
     
-    #peluchesusuario button{
-        width: 20%;
-    }
     
 }

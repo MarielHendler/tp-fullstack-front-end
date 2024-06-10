@@ -1,6 +1,8 @@
 const API_URL_PELUCHES = "http://localhost:8080/peluches";
 const API_URL_COLORES = "http://localhost:8080/colores";
 const API_URL_ACCESORIOS = "http://localhost:8080/accesorios";
+const API_URL_ASOCIARPELUCHEUSUAURIO = "http://localhost:8080/usuario/peluches";
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     const tipoPeluche = document.getElementById('tipo');
@@ -20,7 +22,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const token = localStorage.getItem('token');
     console.log('Token guardado:', token);
-    
+
+    //Reviso primero que se haya autenticado el usuario
     if (token == null) {
         mensajeDiv.textContent = 'No estás autenticado. Por favor, iniciá sesión.';
         mensajeDiv.style.color = 'red';
@@ -42,58 +45,90 @@ document.addEventListener('DOMContentLoaded', async function () {
         return;
     }
 
-    async function fetchOpciones() {
-        try {
-            // Fetch tipos
-            let response = await fetch(API_URL_PELUCHES);
-            let tipos = await response.json();
-            tipos.forEach(tipo => {
-                let option = document.createElement('option');
-                option.value = tipo.id;
-                option.textContent = tipo.nombre;
+    try {
+            // Fetch tipo peluche
+            fetch(API_URL_PELUCHES)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(peluche => {
+                var option = document.createElement("option");
+                option.value = peluche.tipo;
+                option.text = peluche.tipo;
                 tipoPeluche.appendChild(option);
+                });
             });
-
-            // Fetch colores
-            response = await fetch(API_URL_COLORES);
-            let colores = await response.json();
-            colores.forEach(color => {
-                let option = document.createElement('option');
-                option.value = color.id;
-                option.textContent = color.nombre;
+            
+            //fetch colores
+            fetch(API_URL_COLORES)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(color => {
+                var option = document.createElement("option");
+                option.value = color.colorpeluche;
+                option.text = color.colorpeluche
                 colorPeluche.appendChild(option);
+                });
             });
 
-            // Fetch accesorios
-            response = await fetch(API_URL_ACCESORIOS);
-            let accesorios = await response.json();
-            accesorios.forEach(accesorio => {
-                let option = document.createElement('option');
-                option.value = accesorio.id;
-                option.textContent = accesorio.nombre;
-                accesorioPeluche.appendChild(option);
-            });
+              //fetch accesorios
+              fetch(API_URL_ACCESORIOS)
+              .then(response => response.json())
+              .then(data => {
+                  data.forEach(accesorio => {
+                  var option = document.createElement("option");
+                  option.value = accesorio.estilo;
+                  option.text = accesorio.estilo
+                  accesorioPeluche.appendChild(option);
+                  });
+              });
+
         } catch (error) {
-            console.error('Error fetching options:', error);
+            console.error('Error', error);
         }
-    }
 
-    fetchOpciones();
 
-    const form = document.getElementById('customize-form');
-
-    /*form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const tipo = document.getElementById('tipo').value;
-        const color = document.getElementById('color').value;
-        const accesorio = document.getElementById('accesorio').value;
-
-        console.log('Tipo:', tipo);
-        console.log('Color:', color);
-        console.log('Accesorio:', accesorio);
-
-        // Aquí puedes añadir la lógica para enviar estos datos a tu servidor o API.
-    });*/
-   
-}); 
+        const form = document.getElementById('personalizado-peluche');
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+    
+            const tipo = tipoPeluche.value;
+            const color = colorPeluche.value;
+            const accesorio = accesorioPeluche.value;
+    
+            if (!tipo || !color || !accesorio) {
+                alert('Por favor, complete todos los campos para personalizar su peluche.');
+                return;
+            }
+    
+            try {
+                const response = await fetch(API_URL_ASOCIARPELUCHEUSUAURIO, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        tipo,
+                        color,
+                        accesorio
+                    })
+                });
+    
+                if (response.ok) {
+                    console.log(response);
+                    mensajeDiv.textContent = 'Se generó su peluche personalizado';
+                    mensajeDiv.style.color = 'green';
+                    mensajeDiv.style.textAlign = 'center';
+                    mensajeDiv.style.padding = '20px';
+                } else {
+                    const errorText = await response.text();
+                    mensajeDiv.textContent = 'Error al personalizar el peluche: ' + errorText;
+                    mensajeDiv.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Error', error);
+                mensajeDiv.textContent = 'Ha ocurrido un error inesperado.';
+                mensajeDiv.style.color = 'red';
+            }
+        });
+ });
