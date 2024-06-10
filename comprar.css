@@ -113,10 +113,13 @@ body{
     width: 100%;
 }
 
-.imagenespeluches{
-    width: 200px;
-
+.imagenpeluche{
+    display:flex;
+    padding-left: 40%;
+    padding-right: 40%;
 }
+
+
 
 @media (max-width:500px) {
     

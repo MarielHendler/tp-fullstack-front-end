@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const logoutButton = document.getElementById('logout');
     const NavButtons = document.getElementById('navdiv');
     const mensajeDiv = document.getElementById('mensaje');
+    const imagenDiv = document.getElementById('imagen-peluche');
 
     // cerrar sesión
     logoutButton.addEventListener('click', function () {
@@ -139,4 +140,76 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         }
     });
+
+    function getImagen(tipo, color) {
+        const ruta = "images\\";
+    
+        let nombre = "";
+    
+        switch (tipo.toLowerCase()) {
+            case "gato":
+                nombre = "gato";
+                break;
+            case "mapache":
+                nombre = "mapache";
+                break;
+            case "perro":
+                nombre = "perro";
+                break;
+            default:
+                nombre = "default";
+                break;
+        }
+    
+        switch (color.toLowerCase()) {
+            case "rosa":
+                nombre += "rosa.jpg";
+                break;
+            case "verde":
+                nombre += "verde.jpg";
+                break;
+            case "amarillo":
+                nombre += "amarillo.jpg";
+                break;
+            // Añadir más casos según los colores disponibles
+            default:
+                nombre += "default.jpg";
+                break;
+        }
+    
+        const rutaimagen = ruta + nombre;
+        return rutaimagen;
+    }
+    
+    // Función para mostrar la imagen del peluche según el tipo y color seleccionado
+    function mostrarImagen() {
+        const tipo = tipoPeluche.value;
+        const color = colorPeluche.value;
+    
+        // Verificar si se ha seleccionado tanto el tipo como el color
+        if (tipo && color) {
+            // Obtener ruta de la imagen del peluche
+            const imgSrc = getImagen(tipo, color);
+    
+            console.log(imgSrc);
+            // Mostrar la imagen
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `${tipo} ${color}`;
+            img.style.width = '200px'; // Establecer tamaño de la imagen
+    
+            // Limpiar el contenido anterior antes de agregar la nueva imagen
+            imagenDiv.innerHTML = '';
+    
+            // Agregar imagen al mensajeDiv
+            imagenDiv.appendChild(img);
+        } else {
+            // Si no se ha seleccionado tanto el tipo como el color, eliminar la imagen
+            imagenDiv.innerHTML = '';
+        }
+    }
+    
+    tipoPeluche.addEventListener('change', mostrarImagen);
+    colorPeluche.addEventListener('change', mostrarImagen);
+
 });
