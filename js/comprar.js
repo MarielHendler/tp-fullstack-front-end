@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             return;
         }
 
-        const confirmacion = confirm(`¿Está seguro de generar un ${tipo} ${color} con ${accesorio}?`);
+        const confirmacion = confirm(`¿Está seguro de querer comprar un ${tipo} ${color} con ${accesorio}?`);
         if (confirmacion) {
             try {
                 const response = await fetch(API_URL_ASOCIARPELUCHEUSUAURIO, {
