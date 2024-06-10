@@ -75,7 +75,13 @@ nav button:hover {
     border: 1px solid #ccc;
     text-align: center;
     font-weight: bold;
-    
+}
+
+.lineapeluches img{
+    width: 200px;
+    filter:drop-shadow(
+        0 0 10px rgba(0,0,0, .8)
+    )
 }
 
 .coleccion{

@@ -117,6 +117,9 @@ body{
     display:flex;
     padding-left: 40%;
     padding-right: 40%;
+    filter:drop-shadow(
+        0 0 10px rgba(0,0,0, .8)
+    )
 }
 
 

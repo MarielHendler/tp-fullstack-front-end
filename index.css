@@ -77,6 +77,9 @@ body {
 
 .imagenespeluches {
     width: 200px;
+    filter:drop-shadow(
+        0 0 10px rgba(0,0,0, .8)
+    )
 
 }
 
@@ -94,6 +97,7 @@ body {
     .listapeluches {
         width: 100%;
         padding: 10px;
+
     }
 
     body {
